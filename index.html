@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/blackjack-13-378109.ico">
+    <title>Blackjack</title>
+    <script src="https://kit.fontawesome.com/ec87a17681.js" crossorigin="anonymous"></script>
+    <audio id="applauseWin" src="/sounds/applausemp3.mp3"></audio>
+    <audio id="gameOver" src="./sounds/gameOver.mp3"></audio>
+    <audio id="gameLost" src="./sounds/gameLost.mp3"></audio>
+    <audio id="startGame" src="./sounds/startGame.mp3"></audio>
+</head>
+<body>
+
+    <header class="statsGlobales">
+        <div id="totalEfectivo">
+            Efectivo: €50
+        </div>
+        <div id="totalApostado">
+            Total apostado: €0
+        </div>
+
+    </header>
+    <main>
+        <h1 style="text-align: center"> Blackjack</h1>
+        <p id="message-el">Bienvenido <br>¿Querés jugar?</p>
+        <div id="dealerBotDOM">
+            Cartas bot-dealer: 
+
+        </div>
+        <p id="cards-el">Cartas:  </p>
+        <section class="juegoIniciado">
+            <div class="absolute-container">
+                <button id="btnPedir" onclick="newCard()">
+                    <i class="fas fa-plus"></i>
+                    <br>
+                    Pedir
+                </button>
+                <button id="btnPlantarse">
+                    <i class="far fa-hand-paper"></i>
+                    <br>
+                    Plantarse
+                </button>
+            </div>
+
+        </section>
+
+        <div class="overlay"> 
+          <h2>
+            Ganaste: €2 
+          </h2>  
+        </div>
+        <p id="sum">Total:</p>
+
+        <button id="btn-start" onclick="startGame()"><span class="effect">COMENZAR</span></button>
+        <br>
+        <button id="btn-Borrar">REINICIAR</button>
+        <div class="apuestasContainer">
+            <div class="restarApuesta" onclick="disminuirMontoBet()">-</div>
+            <div class="apuestaCentral">
+                <div class="tituloApuesta">Apuesta</div>
+                <div class="montoApuesta">€0</div>
+            </div>
+            <div class="sumarApuesta" onclick="aumentarMontoBet()">+</div>
+        </div>
+        <section class="containerNotificaciones">
+            <div id="notificaciones"></div>
+        </section>
+        <script src="blackjack.js"></script>
+    </main>
+
+</body>
+</html>
+
+

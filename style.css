@@ -1,0 +1,321 @@
+* {
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root{
+      --bigFont: 3rem;
+      --medFont:2rem;
+      --smallFont:1.5rem;
+      --transition:.6s;
+      --white:#f5f4e5;
+  }
+  body{
+
+    background-image: url("./img/texture.jpg");
+    background-size: cover;
+    position: relative;
+  }
+  header.statsGlobales{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, .3);
+    color: var(--white);
+    padding: 10px 30px;
+  }
+  #totalApostado{
+    margin-left: 20px;
+  }
+  main{
+      height: 100vh;
+  }
+  .juegoIniciado{
+    /*SOBRE ESTO REPOSA EL OVERLAY*/
+    position: relative;
+    margin: 0 30%;
+  }
+
+
+  .absolute-container{
+/*     display: flex; */
+    justify-content: space-between;
+    /* sin esto no se expande el container 
+    cuando esta en absolute */
+    width: 100%;
+    top:-80px;
+    left: 0;
+    position: absolute;
+    display: none;
+  }
+  .absolute-container button{
+    font-size: 20px;
+    width: 120px;
+  }
+.overlay{
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  background-color: rgba(200, 256, 256, .5);
+  font-size: var(--medFont);
+  height: 200px;
+  line-height: 200px;
+  color: rgb(19, 70, 54);
+  transition: var(--transition);
+}
+  #cards-el{
+    /*este margin no figura pero afecta
+    el position absolute del overlay*/ 
+    margin: 0 50px;
+    margin-bottom: 200px;
+    padding-left: 100px;
+  }
+  /*VER DE USAR ESTE MARGIN CON EL CELU P Q SEA + RESPONSIVE*/
+  #dealerBotDOM{
+    margin: 0 50px;
+  }
+  /* cuando perdes o ganas aparece */
+  .overlay.show{
+    top:initial;
+    transform: translateY(-100%);
+  }
+  .overlay h2{
+    font-size: var(--medFont);
+  }
+
+  h1 {
+    margin: 50px;
+    color: goldenrod;
+    font-size: var(--bigFont);
+
+  }
+  #message-el {
+    font-style: italic;
+    font-size: var(--medFont);
+    padding-bottom: 20px;
+    color: var(--white);
+  }
+  p {
+    padding: 5px;
+    font-size: var(--smallFont);
+    font-weight: 400;
+  }
+  
+  #sum {
+    margin-top: 100px;
+  }
+button {
+    background:linear-gradient(to left, goldenrod, rgb(216, 174, 70)) ;
+    font-size: var(--smallFont);
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 190px;
+    border: 3px solid goldenrod;
+
+  }
+
+span.effect{  
+    font-weight: bolder;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: url(/img/texture.jpg);
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+button:hover *{
+  transition: var(--transition);
+    background: none;
+    color: var(--white);
+}
+
+#btn-Borrar{
+  border: 3px solid crimson;
+  background: crimson;
+  color: var(--white);
+}
+
+
+/*-------------------------------------------------*/
+section.containerNotificaciones{
+  position: relative;
+}
+#notificaciones{
+  position: absolute;
+  top: -270px;
+  left: 0;
+  width: 42%;
+
+  transition: var(--transition);
+  -webkit-border-radius: 0px 35px 33px 0px;
+-moz-border-radius: 0px 35px 33px 0px;
+border-radius: 0px 35px 33px 0px;
+transform: translateX(-100%);
+}
+#notificaciones.show{
+  transform: translateX(0);
+  transition: var(--transition);
+  padding: 10px;
+  border: 1px solid rgb(150, 114, 52);
+  background-color: rgb(252,248,227);
+  color: rgb(168, 126, 53);
+}
+#notificaciones.showGameOver{
+  transform: translateX(0);
+  transition: var(--transition);
+  padding: 10px;
+  color: rgb(185,74,72);
+  border: 1px solid rgb(185,74,72);
+  background-color: rgb(242,222,222);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.apuestasContainer{
+  display: grid;
+  width: 190px;
+  margin: 10px auto;
+  grid-template-columns: 40px auto 40px;
+  grid-column-gap:5px;
+
+}
+.restarApuesta, .sumarApuesta{
+  font-weight: bold;
+  font-size: var(--bigFont);
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  box-shadow: 4px 2px 18px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 4px 2px 18px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 2px 18px 0px rgba(0,0,0,0.75);
+cursor: pointer;
+}
+.apuestaCentral{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: rgba(256, 256, 256, .3);
+  border-radius: 5px;
+}
+
+
+
+
+/*-------------------------------------------------*/
+#dealerBotDOM{
+  padding: 5px;
+  font-size: var(--smallFont);
+  font-weight: 300;
+}
+.cartaBot{
+  background-color: black;
+  color: var(--white);
+  width: 35px;
+  /* para q respete el width */
+  display: inline-block;
+  border-radius: 2px;
+  margin-right: 5px;
+    /*esto lo agregué p q no se peguen
+  con el line-break*/
+  margin-top: 15px;
+} 
+.cartaBot.last{
+  position: relative;
+}
+.cartaBot.last::after{
+  content: attr(data-totalBotDinamico);
+  font-size: 15px;
+  height: 20px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: var(--white);
+  color: crimson;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:  -10px;
+  left: 30px;
+}
+.cartaItem{
+  background-color: var(--white);
+  width: 35px;
+  /* para q respete el width */
+  display: inline-block;
+  border-radius: 2px;
+  margin-right: 5px;
+  /*esto lo agregué p q no se peguen
+  con el line-break*/
+  margin-top: 15px;
+}
+.cartaItem.last{
+  position: relative;
+}
+.cartaItem.last::after{
+  content: attr(data-totalDinamico);
+  font-size: 15px;
+  height: 20px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: crimson;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:  -10px;
+  left: 30px;
+}
+
+
+
+/*--------------MEDIA-QUERY------------------------------*/
+
+@media only screen and (max-width: 975px) {
+  #notificaciones{
+    width: 80%;
+    font-size: 15px;
+    font-weight: 300;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .juegoIniciado{
+
+    margin: 0 15%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .juegoIniciado{
+
+    margin: 0 10%;
+  }
+  #cards-el{
+    padding-left: 20px;
+    text-align: left;
+  }
+  #btnPedir, #btnPlantarse{
+    width: 100px;
+    padding: 2px;
+    margin: 0;
+    font-size: 19px;
+  }
+}
