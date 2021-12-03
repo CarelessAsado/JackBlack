@@ -122,11 +122,7 @@ button {
 
 span.effect{  
     font-weight: bolder;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color : transparent;
-    background-image: url(/img/texture.jpg);
+    color: rgb(12, 83, 48);
     pointer-events: none;
     transition: var(--transition);
 }
