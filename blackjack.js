@@ -53,7 +53,7 @@ function startGame (){
     return renderizarNotificacion("Reiniciá el juego.")
   }
   if(!totalAApostar){
-    return renderizarNotificacion("Hay que poner la papota.")
+    return renderizarNotificacion("Hay que apostar dinero.")
   }
   if(areWePlaying){
     return
@@ -236,7 +236,7 @@ function aumentarMontoBet(){
     return
   }
   if (totalAApostar ==player.efectivo){
-    return renderizarNotificacion("No hay más guita.")
+    return renderizarNotificacion("No hay más plata para apostar.")
   }
   totalAApostar += 10;
   renderTotalApostarDOM(totalAApostar)
